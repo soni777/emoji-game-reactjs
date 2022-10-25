@@ -1,0 +1,47 @@
+.navbar {
+  background-color: #ffffff33;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.margin-auto {
+  margin: 0px auto;
+}
+
+@media (min-width: 768px) {
+  .margin-left {
+    margin-left: 312px;
+  }
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo-name {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.scoreBar {
+  display: flex;
+  margin: 0px auto;
+  font-weight: 500;
+}
+
+.score {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.topScore {
+  font-size: 18px;
+
+  margin-right: 20px;
+}

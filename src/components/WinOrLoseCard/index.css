@@ -1,0 +1,69 @@
+.win-or-loss-card {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  background-color: #ffffff33;
+  width: 600px;
+  margin: 30px auto 0px auto;
+  padding: 30px;
+  border: solid 1px #ffffff30;
+  border-radius: 15px;
+}
+
+.win-or-loss-text {
+  order: -1;
+  text-align: center;
+}
+
+.result {
+  font-size: 45px;
+}
+
+.subtitle {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.totalScore {
+  color: #6a59ff;
+  font-size: 42px;
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.play-btn {
+  background-color: #ffce27;
+  color: #3d3d3d;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  height: 50px;
+  width: 140px;
+}
+
+.emoji-win-loss-image {
+  width: 220px;
+  height: 300px;
+}
+
+@media (max-width: 767px) {
+  .win-or-loss-card {
+    width: 350px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .win-or-loss-text {
+    order: 1;
+  }
+  .result {
+    font-size: 40px;
+  }
+
+  .emoji-win-loss-image {
+    width: 180px;
+    height: 250px;
+  }
+}
