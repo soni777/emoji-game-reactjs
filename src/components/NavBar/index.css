@@ -8,16 +8,9 @@
 .logo-container {
   display: flex;
   align-items: center;
-}
-
-.margin-auto {
-  margin: 0px auto;
-}
-
-@media (min-width: 768px) {
-  .margin-left {
-    margin-left: 312px;
-  }
+  justify-content: center;
+  flex-basis: 80%;
+  max-width: 800px;
 }
 
 .logo {

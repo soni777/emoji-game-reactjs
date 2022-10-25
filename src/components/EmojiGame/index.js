@@ -21,24 +21,22 @@ import WinOrLossCard from '../WinOrLoseCard'
 import './index.css'
 
 class EmojiGame extends Component {
-  state = {score: 0, topScore: 0, gameOn: true, result: true, emojis: []}
+  state = {topScore: 0, gameOn: true, emojis: []}
 
   onClickEmoji = id => {
     this.setState(prevState => {
-      let {emojis, gameOn, score, result} = prevState
-      if (gameOn) {
-        if (emojis.includes(id)) {
-          result = false
+      let {emojis, gameOn} = prevState
+      if (emojis.includes(id)) {
+        gameOn = false
+      } else {
+        emojis = [...emojis, id]
+
+        if (emojis.length === 12) {
           gameOn = false
-        } else {
-          score += 1
-          emojis = [...emojis, id]
-          if (score === 12) {
-            gameOn = false
-          }
         }
       }
-      return {score, emojis, result, gameOn}
+
+      return {emojis, gameOn}
     })
   }
 
@@ -48,18 +46,21 @@ class EmojiGame extends Component {
       if (currentScore > topScore) {
         topScore = currentScore
       }
-      return {score: 0, topScore, gameOn: true, result: true, emojis: []}
+      return {topScore, gameOn: true, emojis: []}
     })
   }
 
-  render() {
-    const {score, topScore, gameOn, result} = this.state
-    const shuffledEmojisList = () => {
-      const {emojisList} = this.props
-      return emojisList.sort(() => Math.random() - 0.5)
-    }
+  shuffledEmojisList = () => {
+    const {emojisList} = this.props
+    return emojisList.sort(() => Math.random() - 0.5)
+  }
 
-    const shuffledEmojis = shuffledEmojisList()
+  render() {
+    const {topScore, gameOn, emojis} = this.state
+    const score = emojis.length
+    const result = score === 12
+
+    const shuffledEmojis = this.shuffledEmojisList()
     return (
       <div className="app-container">
         <NavBar score={score} topScore={topScore} gameOn={gameOn} />
